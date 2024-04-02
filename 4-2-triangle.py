@@ -22,7 +22,7 @@ try:
 
             GPIO.output(dac, number)
             n += 1
-            time.sleep(t)
+            time.sleep(t/512)
         n -= 1
         while n>0:
             b = dec2bin(n)
@@ -32,7 +32,7 @@ try:
 
             GPIO.output(dac, number)
             n -= 1
-            time.sleep(t)
+            time.sleep(t/512)
 finally:
     GPIO.output(dac, 0)
     GPIO.cleanup()
